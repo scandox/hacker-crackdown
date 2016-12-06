@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ @@include('../includes/head.html')
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div style="margin-top: 25%">
+        <h1>Download</h1>
+      		<p> <a href='index.html'>Home</a> | <a href='about.html'>About</a> | <a href='contents.html'>Contents</a> | 
+      		<a href='https://github.com/scandox/hacker-crackdown' target="_blank">Code</a> |
+		    <a href='license.html'>License</a> </p>
+      </div>
+    </div>
+    <div class="row">
+		<div class="eight columns" style="margin-top: 10%">
+			<p>You can use the link below to download a tar file which contains:</p>
+			<ul>
+				<li>A JSON file containing all moderated annotations</li>
+				<li>A live snapshot of the static site content</li>
+			</ul>
+			<p>Vaguely in my mind this feels like a safety net because the annotations are tied to the precise layout of the html of the site. So if you have a copy of the site exactly as is and a copy of all the annotation data at a given moment, they ought to definitely match each other. Of course, if the layouts were to change, then it would I think knock the annotation data in the DB out of whack, so really major changes to the textual layout should be rare and accompanied by some kind of recalibration of the annotation ranges. So I'm hoping that never needs to happen.</p>
+			<h5><a href='http://localhost:3000/v1/download'>Download Now</a></h5>
+				<br><br>
+		</div>
+    </div>
+  </div>
+
+  <script src='hc.min.js'></script>
+
+</body>
+</html>

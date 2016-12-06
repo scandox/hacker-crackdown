@@ -1,0 +1,13 @@
+{
+  "database": { 
+	"username": "hacker_crackdown",
+	"password": "password",
+	"database": "hacker_crackdown_dev",
+	"host": "127.0.0.1",
+	"dialect": "postgres"
+  },
+  "token": {
+	"jwtSecret": "longrandomstringthatnobodycouldeverguessetc",
+	"jwtIssuer": "hc.yourserver.whatever"
+  }  
+}

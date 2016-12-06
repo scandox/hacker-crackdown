@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "annotator": "git+https://github.com/scandox/annotator.git",
+    "bluebird": "^3.4.6",
+    "jquery": "^3.1.1"
+  },
+  "jshintConfig": {
+    "browser": true,
+    "browserify": true,
+    "devel": true
+  }
+}

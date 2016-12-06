@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ @@include('../includes/head.html')
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div style="margin-top: 25%">
+        <h1>About</h1>
+      		<p> <a href='index.html'>Home</a> | <a href='contents.html'>Contents</a> | 
+		    <a href='download.html'>Download</a> | <a href='https://github.com/scandox/hacker-crackdown' target="_blank">Code</a> |
+		    <a href='license.html'>License</a> </p>
+      </div>
+    </div>
+    <div class="row">
+		<div class="eight columns" style="margin-top: 10%">
+			<h4>
+			About this Project
+			</h4>
+			<p>This is another electronic version of the book <em>The Hacker Crackdown</em> by <a href='https://en.wikipedia.org/wiki/Bruce_Sterling'>Bruce Sterling</a>. It has two main aims:</p>
+			<ul>
+				<li>To be easily readable in a web browser, regardless of device</li>
+				<li>To be openly annotatable. By openly I mean by anyone without any form of identification.</li>
+				<li>For those annotations to be visible to anyone.</li>
+			</ul>
+            <h5>How does it work?</h5>
+            <p>Highlight any text (yes including on this page). Click on the pencil. Type your comment. Click Save. That's it.</p> 
+            <p>A few more detailed notes:</p>
+            <ul>
+				<li>If you want to be able to edit or remove your annotation at a later point, then also enter a username beneath your comment. It can be anything you like (as long as somebody else hasn't taken it).</li>
+				<li>If you don't enter a username your annotation will show up as the user "anon". You will NOT be able to delete or modify annotations made in this way.</li>
+				<li>Annotations are moderated. At first you will see your own annotations in blue. Once they're moderated they will turn yellow. While they're blue no-one else can see them. Note: this behaviour uses local storage in the browser. If you don't have this, for whatever reason, then nothing will show until it is moderated.</li>
+				<li>Moderation will focus on weeding out spam, gibberish and horrible shit. I will try to be as open as possible. If you think something has been miscategorised, then email me: scandox at gmail.</li>
+				<li>If you change username, then you will lose the ability to edit and remove prior annotations (unless you copy your token from localStorage manually and restore it - see below)</li>
+            </ul>
+			<h5>Some technical matters</h5>
+			<p>The site aims to gather as little data about users as possible, while still being useful.</p>
+			<ul>
+				<li>The site doesn't use Cookies at all.</li>
+				<li>I don't use any externally linked resources, CDNs etc</li>
+				<li>The site has no concept of `password`</li>
+				<li>The server running this version (hc.jollymango.com) has all the logging I know about disabled</li>
+				<li>The site DOES use localStorage extensively. If you choose to pick a username when making annotations the server generates a <a href='https://jwt.io/introduction/'>JWT</a>. It also uses localStorage to keep track of your unmoderated annotations. </li>
+				<li>If you have chosen a username, the JWT stored in localStorage will be added to the X-Access-Header with each request to the server. The JWT encodes only the username, issuing server and the issue date. The JWT is not stored server-side. It relies only on the decoding with the server-side secret to establish the claim to the username. They cannot be revoked individually.</li>
+				<li>Your username will NOT be available to you on other devices, unless you manually copied over the user entry from localStorage to the other device's localStorage for the site.</li>
+				<li>If you change username for a specific annotation, then the localStorage entry is overwritten and you won't then be able to edit and remove annotations made with the previous username. However you could, in theory, copy, retain and restore a prior user entry to achieve a multi-user situation. Probably it would be a pain in the neck though.</li>
+
+			</ul>
+			<h5>Why? and other matters</h5>
+			<p><strong>Why did you do this?</strong> I think this book's relevance has in many ways increased over time, rather than decreased. I'd like more non-technical people to be aware of it. I thought a lot of people probably had very interesting knowledge of and reflections upon the events described.</p>
+			<p><strong>Where's the search function?</strong> There is no search function. The site is designed as a reading experience. A start at the beginning and end at the end type experience. If you want to search the annotations, you can download the raw data and hack away.</p>
+			<p><strong>Your Code sucks</strong>. I know! Pull Requests very welcome at <a href='https://github.com/scandox/hacker-crackdown'>github</a>.</p>
+			<p><strong>Why did you fork the annotator library?</strong> I needed to be able to call async events in sequence after certain actions in the editor (such as clicking the "save" button). I didn't think my code good enough to put in a pull request to the original project.</p> 
+
+			<br><br>
+		</div>
+    </div>
+  </div>
+
+  <script src='hc.min.js'></script>
+
+</body>
+</html>
