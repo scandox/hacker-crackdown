@@ -45,7 +45,7 @@
 				<li>The site doesn't use Cookies at all.</li>
 				<li>I don't use any externally linked resources, CDNs etc</li>
 				<li>The site has no concept of `password`</li>
-				<li>The server running this version (hc.jollymango.com) has all the logging I know about disabled</li>
+				<li>The server running this version (hc.selectedintelligence.com) has all the logging I know about disabled</li>
 				<li>The site DOES use localStorage extensively. If you choose to pick a username when making annotations the server generates a <a href='https://jwt.io/introduction/'>JWT</a>. It also uses localStorage to keep track of your unmoderated annotations. </li>
 				<li>If you have chosen a username, the JWT stored in localStorage will be added to the X-Access-Header with each request to the server. The JWT encodes only the username, issuing server and the issue date. The JWT is not stored server-side. It relies only on the decoding with the server-side secret to establish the claim to the username. They cannot be revoked individually.</li>
 				<li>Your username will NOT be available to you on other devices, unless you manually copied over the user entry from localStorage to the other device's localStorage for the site.</li>
