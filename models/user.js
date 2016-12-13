@@ -4,7 +4,7 @@ module.exports = function(sequelize, dataTypes) {
 
   var User = sequelize.define('user', {
     username: {
-      type: dataTypes.STRING,
+      type: 'citext',
       unique: true,
       allowNull: false
     }
