@@ -26,6 +26,6 @@ var render = exports.render = function render(annotation) {
    This uses Micromarkdown: http://simonwaldherr.github.io/micromarkdown.js/
 
 */
-exports.viewer = function viewerExtension(viewer) {
-    viewer.setRenderer(render);
+exports.viewer = function viewerExtension(v) {
+    v.setRenderer(render);
 };
