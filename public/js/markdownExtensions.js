@@ -2,7 +2,8 @@
 var annotator = require('annotator');
 var util = annotator.util;
 var _t = util.gettext;
-var mmd = require('micromarkdown');
+// TODO: Replace with NPM package when it is updated
+var mmd = require('./micromarkdown.js');
 
 /* If the annotation has text renders markdown as HTML
 
