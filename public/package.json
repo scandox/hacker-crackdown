@@ -11,7 +11,8 @@
   "dependencies": {
     "annotator": "git+https://github.com/scandox/annotator.git",
     "bluebird": "^3.4.6",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "micromarkdown": "^0.3.4-a"
   },
   "jshintConfig": {
     "browser": true,

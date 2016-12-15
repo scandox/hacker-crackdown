@@ -4,6 +4,7 @@ var $ = require('jquery');
 var annotator = require('annotator');
 var user = require('./user.js');
 var usernameExtensions = require('./usernameExtensions.js');
+var markdownExtensions = require('./markdownExtensions.js');
 var annotationEvents = require('./annotationEvents.js');
 var utilities = require('./utilities.js');
 
@@ -15,7 +16,10 @@ $(function() {
 
   app.include(annotator.ui.main, {
     editorExtensions: [extensions.editor],
-    viewerExtensions: [extensions.viewer]
+    viewerExtensions: [
+      extensions.viewer, 
+      markdownExtensions.viewer
+    ]
   });
 
   app.include(annotator.storage.http, {
