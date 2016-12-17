@@ -9,7 +9,6 @@
   "author": "scandox@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "annotator": "git+https://github.com/scandox/annotator.git",
     "archiver": "^1.2.0",
     "argv": "0.0.2",
     "body-parser": "^1.15.2",
