@@ -86,9 +86,16 @@ module.exports = function(app) {
 
     */
     viewer: function(v) {
-      function updateViewer(field, annotation) {
+      function updateViewer(field, annotation, controller) {
         field = $(field);
         field.html('<span>' + annotation.username + '</span>');
+
+        // Hide edit/delete controls unless current username is originator
+        var username = user.getCurrentUsername();
+        if (username!==annotation.username) {
+          controller.hideEdit();
+          controller.hideDelete();
+        }
       }
 
       v.addField({
