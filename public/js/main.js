@@ -16,7 +16,10 @@ $(function() {
     currentPathname = utilities.currentPathname();
 
   app.include(annotator.ui.main, {
-    editorExtensions: [extensions.editor, customizeEditor],
+    editorExtensions: [
+      extensions.editor, 
+      customizeEditor
+    ],
     viewerExtensions: [
       extensions.viewer, 
       markdownExtensions.viewer
