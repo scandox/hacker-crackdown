@@ -17,8 +17,9 @@ var gulp = require('gulp'),
   del = require('del'),
   fs = require('fs'),
   argv = require('argv'),
-  ncp = require('ncp').ncp;
-
+  ncp = require('ncp').ncp,
+  sitemap = require('gulp-sitemap');
+ 
 var environment = argv.environment ? argv.environment : 'development',
   config = {
     content: {
@@ -146,6 +147,16 @@ gulp.task('client-assets', function() {
     .pipe(bundleTimer);
 });
 
+gulp.task('sitemap', function () {
+  gulp.src(config.html.outputDir + '/**/*.html', {
+    read: false
+  })
+  .pipe(sitemap({
+    siteUrl: 'https://hc.selectedintelligence.com'
+  }))
+  .pipe(gulp.dest(config.html.outputDir));
+});
+
 function getSectionHeaderValue(id, section) {
   var starting = '<!--' + id + ':',
     ending = '-->',
@@ -241,4 +252,4 @@ function copyStaticViews() {
   });
 }
 
-gulp.task('default', ['client-js', 'client-html', 'client-assets']);
+gulp.task('default', ['client-js', 'client-html', 'client-assets', 'sitemap']);
